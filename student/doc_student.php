@@ -33,7 +33,7 @@
             <?php 
             $act = (isset($_GET['act']) ? $_GET['act'] : '');
             if ($act == 'add') {
-            include('s_file_add.php');
+            include('doc_add_student.php');
             }elseif ($act == 'edit') {
             include('doc_edit.php');
             }
