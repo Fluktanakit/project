@@ -48,29 +48,44 @@
             <p>แก้ไขข้อมูลส่วนตัว</p>
           </a>
         </li>
-        <li class="nav-item">
-              <a href="doc.php" class="nav-link <?php if($menu=="doc"){echo "active";} ?> ">
+        <li class="nav-item menu-is-opening menu-open">
+          <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-copy"></i>
+            <p>
+             เอกสาร
+              <i class="fas fa-angle-left right"></i>
+              <span class="badge badge-info right">2</span>
+            </p>
+          </a>
+          <ul class="nav nav-treeview" style="display: block;">
+
+           
+            </li>
+            <li class="nav-item">
+              <a href="doc_department.php" class="nav-link <?php if($menu=="doc_depart"){echo "active";} ?> ">
                 <i class="far fa-circle nav-icon"></i>
-                <p>เอกสารแบบคำร้อง</p>
+                <p>เอกสารเฉาะแผนก</p>
               </a>
             </li>
             <li class="nav-item">
-              <a href="Sdoc.php" class="nav-link <?php if($menu=="Sdoc"){echo "active";} ?>">
+              <a href="doc_student.php" class="nav-link <?php if($menu=="doc_mem"){echo "active";} ?>">
                 <i class="far fa-circle nav-icon"></i>
-                <p>ส่งเอกสารเอกสาร</p>
+                <p>เอกสารเฉาะบุคคล</p>
               </a>
             </li>
            
-
-          
+            </li>
+          </ul>
         </li>
-        <li class="nav-header"></li>
-          <li class="nav-item">
-            <a href="../logout.php" class="nav-link"  onclick="return confirm('ยืนยันออกจากระบบ !!');">
-              <i class="nav-icon far fa-circle text-danger"></i>
-              <p class="text">ออกจากระบบ</p>
-</a>
-</li>
+        
+        <li class="nav-header">ออกจากระบบ</li>
+        <li class="nav-item">
+          <a href="../logout.php" class="nav-link"  onclick="return confirm('ยืนยันออกจากระบบ !!');">
+            <i class="nav-icon far fa-circle text-danger"></i>
+            <p class="text">ออกจากระบบ</p>
+          </a>
+        </li>
+        
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

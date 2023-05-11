@@ -21,10 +21,13 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label>username</label>
-            <input type="text" name="m_username"  value="<?= $row_em['m_username'];?>" class="form-control" placeholder="กรอกข้อมูลusername">
+            <input type="text" name="m_username"  value="<?php echo $row_em['m_username'];?>" class="form-control" placeholder="กรอกข้อมูลusername">
           </div>
         </div>
-        <div class="col-sm-6">
+       
+      </div>
+      <div class="row">
+       <div class="col-sm-6">
           <div class="form-group">
             <label>password</label>
             <input type="text" name="m_password" value="<?= $row_em['m_password'];?>" class="form-control" placeholder="กรอกข้อมูลpassword">
@@ -42,10 +45,10 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
-            <label>ปีการศึกษา</label>
+            <label>แผนกงาน</label>
             <select name="d_id" class="form-control" required>
                  <option value="<?= $row_em['d_id'];?>"><?= $row_em['d_name'];?></option>
-              <option disabled>-เลือกปีการศึกษา-</option>
+              <option disabled>-เลือกแผนกงาน-</option>
               <?php
               include '../condb.php';
               $stmt = $conn->prepare("SELECT* FROM tbl_department");
