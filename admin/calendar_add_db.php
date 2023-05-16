@@ -3,16 +3,19 @@
     if(isset($_POST['c_name'])) {
     //ไฟล์เชื่อมต่อฐานข้อมูล
     include 'condb.php';
+    
     //ประกาศตัวแปรรับค่าจากฟอร์ม
     $c_id = $_POST['c_id'];
     $c_name = $_POST['c_name'];
-    $c_date = $_POST['c_date'];
+    $c_start = $_POST['c_start'];
+    $c_complete = $_POST['c_complete'];
     $c_work = $_POST['c_work'];
-    $stmt = $conn->prepare("INSERT INTO tbl_calendar (c_id,c_name, c_date, c_work)
-    VALUES (:c_id,:c_name, :c_date, :c_work)");
+    $stmt = $conn->prepare("INSERT INTO tbl_calendar (c_id,c_name, c_complete,c_start, c_work)
+    VALUES (:c_id,:c_name, :c_complete,:c_start, :c_work)");
     $stmt->bindParam(':c_id', $c_id, PDO::PARAM_STR);
     $stmt->bindParam(':c_name', $c_name, PDO::PARAM_STR);
-    $stmt->bindParam(':c_date', $c_date, PDO::PARAM_STR);
+    $stmt->bindParam(':c_complete', $c_complete, PDO::PARAM_STR);
+    $stmt->bindParam(':c_start', $c_start, PDO::PARAM_STR);
     $stmt->bindParam(':c_work', $c_work, PDO::PARAM_STR);
     $result = $stmt->execute();
       echo '
@@ -62,3 +65,5 @@
      //else check
   //isset
     ?>
+    
+           

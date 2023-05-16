@@ -2,6 +2,7 @@
 //คิวรี่ข้อมูลมาแสดงในตาราง โดยเทียบข้อมูลระหว่างตารางตำแหน่งงานกับตารางพนักงานที่มีคอลัมภ์สัมพันธ์กัน ก็คือ p_id กับ ref_p_id
 include 'condb.php';
 $stmt = $conn->prepare("SELECT* FROM tbl_calendar");
+$stmt = $conn->prepare("SELECT * ,DATEDIFF(c_complete , c_start) as sumdate FROM tbl_calendar");
 $stmt->execute();
 $result = $stmt->fetchAll();                                 
 ?>
@@ -20,7 +21,7 @@ $result = $stmt->fetchAll();
     <tbody>
        <?php foreach ($result as $row_cal) { ?>  
       <tr>
-        <td>
+        <td></td>
          <?php echo $row_cal['c_id']; ?>
         </td>
          <td>
@@ -33,7 +34,7 @@ $result = $stmt->fetchAll();
          <?php echo $row_cal['c_start']; ?>
         </td>
         <td>
-         <?php echo $row_cal['c_complete']; ?>
+         <?php echo $row_cal['sumdate']; ?>
         </td>
         <td>         
           <a class="btn btn-warning btn-flat btn-sm" href="calendar.php?act=edit&c_id=<?php echo $row_cal['c_id']; ?>">

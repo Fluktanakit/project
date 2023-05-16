@@ -22,7 +22,11 @@
                       </div>
                       <div class="form-group">
                         <label>กำหนดส่งเอกสาร</label>
-                        <input type="date" name="c_date" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
+                        <input type="date" name="c_start" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
+                    </div>
+                      <div class="form-group">
+                        <label>กำหนดส่งเอกสาร</label>
+                        <input type="date" name="c_complete" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                     </div>
                     
@@ -37,4 +41,4 @@
               </div>
               <!-- /.card-body -->
             </div>
-             
+                       

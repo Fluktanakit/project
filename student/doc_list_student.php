@@ -1,7 +1,6 @@
 <?php
 include '../condb.php';
-$stmtDoc = $conn->prepare("
-SELECT * #ตารางเอามาทุกคอลัมภ์
+$stmtDoc = $conn->prepare("SELECT * #ตารางเอามาทุกคอลัมภ์
 FROM tbl_pdf as f
 INNER JOIN tbl_chapter as c ON f.cha_id = c.cha_id
 ORDER BY c.cha_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
