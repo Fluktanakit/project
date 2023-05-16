@@ -1,29 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-        <title>2021</title>
-        <!-- sweet alert  -->
-        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
-    </head>
-    <body>
-        
+
+        <?php
+        include '../condb.php';
+        $stmtDoc = $conn->prepare("
+        SELECT * #ตารางเอามาทุกคอลัมภ์
+        FROM tbl_pdf as f
+        INNER JOIN tbl_chapter as c ON f.cha_id = c.cha_id
+        ORDER BY c.cha_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
+        ");
+        $stmtDoc->execute();
+        $resultDoc = $stmtDoc->fetchAll();
+        ?>
     <div class="card card-info">
   <div class="card-header">
-    <h3 class="card-title">เพิ่มข้อมูลไฟล์เอกสาร</h3>
+    <h3 class="card-title">แก้ไขข้อมูลไฟล์เอกสาร</h3>
   </div>
   <div class="card-body">
-    <form action="doc_add_student_db.php" method="POST" enctype="multipart/form-data">
-      <div class="row">
+    <form action="doc_edit_student_db.php" method="POST" enctype="multipart/form-data">
+    <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
             <label>ชื่อเอกสาร</label>
-            <input type="text" name="doc_name" class="form-control is-warning" placeholder="กรอกข้อมูลชื่อเอกสาร">
+            <input type="text" name="doc_name" value="<?= $row['doc_name'];?>"  class="form-control is-warning" placeholder="กรอกข้อมูลชื่อเอกสาร">
           </div>
         </div>
       </div>
@@ -37,10 +34,10 @@
               include '../condb.php';
               $stmt = $conn->prepare("SELECT* FROM tbl_chapter");
               $stmt->execute();
-              $result_t = $stmt->fetchAll();
-              foreach($result_t as $row_t) {
+              $result = $stmt->fetchAll();
+              foreach($result as $row) {
               ?>
-              <option value="<?= $row_t['cha_id'];?>"><?= $row_t['cha_name'];?></option>
+              <option value="<?= $row['cha_id'];?>"><?= $row['cha_name'];?></option>
               <?php } ?>
             </select>
           </div>
@@ -51,7 +48,7 @@
           <div class="form-group">
             <label>*ไฟล์เอกสาร .pdf *</label>
             <input type="file" name="doc_file" class="form-control" accept="application/pdf">
-          </div>
+        </div>
         </div>
       </div>
       <div class="row">
@@ -71,7 +68,3 @@
     </form>
   </div>
 </div>
-
-    </body>
-</html>
-

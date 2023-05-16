@@ -35,7 +35,7 @@
             if ($act == 'add') {
             include('doc_add_student.php');
             }elseif ($act == 'edit') {
-            include('doc_edit.php');
+            include('doc_edit_student.php');
             }
             else{
             include('doc_list_student.php'); 

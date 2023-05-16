@@ -12,6 +12,7 @@ $result = $stmt->fetchAll();
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 35%;">การดำเนินงาน</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 40%;">สรุปข้อปฏิบัติ</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">วันที่กำหนดส่ง</th>
+        <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ถึงกำหนดส่งใน</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">แก้ไข</th> 
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">ลบ</th> 
       </tr>
@@ -29,7 +30,10 @@ $result = $stmt->fetchAll();
          <?php echo $row_cal['c_work']; ?>
         </td>
          <td>
-         <?php echo $row_cal['c_date']; ?>
+         <?php echo $row_cal['c_start']; ?>
+        </td>
+        <td>
+         <?php echo $row_cal['c_complete']; ?>
         </td>
         <td>         
           <a class="btn btn-warning btn-flat btn-sm" href="calendar.php?act=edit&c_id=<?php echo $row_cal['c_id']; ?>">

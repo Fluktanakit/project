@@ -64,13 +64,13 @@
             <li class="nav-item">
               <a href="doc_department.php" class="nav-link <?php if($menu=="doc_depart"){echo "active";} ?> ">
                 <i class="far fa-circle nav-icon"></i>
-                <p>เอกสารเฉาะแผนก</p>
+                <p>ดาวโหลดเอกสารขอสอบ</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="doc_student.php" class="nav-link <?php if($menu=="doc_mem"){echo "active";} ?>">
                 <i class="far fa-circle nav-icon"></i>
-                <p>เอกสารเฉาะบุคคล</p>
+                <p>รายงานโครงานฯ</p>
               </a>
             </li>
            

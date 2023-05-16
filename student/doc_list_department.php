@@ -18,7 +18,7 @@ $resultDoc = $stmtDoc->fetchAll();
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">รหัสเอกสาร</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ชื่อหนังสือ/ประเภท</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">วันที่อัพโหลด</th>
-      <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">สถานะ</th>
+
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">แผนก/ผู้ใช้</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">จัดการส่วนข้อมูล</th>
     </tr>
@@ -39,24 +39,9 @@ $resultDoc = $stmtDoc->fetchAll();
 
         อัพเมื่อวัน: <?php echo date('d/m/Y',strtotime($row_Doc['date_up'])); ?>
       </td>
-      <td align="center"> <?php
-        $st = $row_Doc['status'];
-        $us = $row_Doc['m_username'];
-        if ($us != '' && $st == 0) {
-        echo $row_Doc['m_username'];
-        echo "<br><span class='badge badge-warning'>";
-          echo "ยังไม่อ่าน";
-        echo "</span>";
-        }elseif ($st == 1) {
-        echo $row_Doc['m_username'];
-        echo "<br><span class='badge badge-success'>";
-          echo "อ่านแล้ว";
-        echo "</span>";
-        }
-      ?></td>
+
       <td>
         <?php echo $row_Doc['d_name'];?><br>
-        จำนวนการดาวน์โหลด: <?php echo number_format($row_Doc['qty']);?> ครั้ง
       </td>
       <td>
         <a class="btn btn-danger btn-block btn-sm" href="doc_open.php?id=<?php echo $row_Doc['fileID']; ?>" target="_blank">
