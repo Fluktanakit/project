@@ -1,5 +1,4 @@
 <?php
-$d_id =  $_SESSION['d_id'];
 include '../condb.php';
 $stmtDoc = $conn->prepare("
 SELECT * #ตารางเอามาทุกคอลัมภ์
