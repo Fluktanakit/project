@@ -29,12 +29,11 @@
                         <input type="date" name="c_complete" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                     </div>
-                    
                   </div>
                   <div class="row" align="left">
                     <div class="col-sm-6">
                          <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>
-                         <a href="department.php" class="btn btn-danger" data-dismiss="modal">ยกเลิก</a>              
+                         <a href="calendar.php" class="btn btn-danger" data-dismiss="modal">ยกเลิก</a>              
                     </div>         
                   </div>              
                 </form>

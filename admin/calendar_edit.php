@@ -18,24 +18,30 @@
               <!-- /.card-header -->
               <div class="card-body">
               <form action="calendar_edit_db.php" method="POST" enctype="multipart/form-data">
-                  <div class="row">
+              <div class="row">
                     <div class="col-sm-6">
                       <!-- text input -->
-                     
+                      <div class="form-group">
+                        <label>ลำดับการดำเนินงาน</label>
+                        <input type="text" name="c_id" value="<?= $row['c_id'];?>" class="form-control" >
+                      </div>
                       <div class="form-group">
                         <label>การดำเนินงาน</label>
-                        <input type="text" name="c_name" class="form-control" placeholder="กรอกข้อมูลการดำเนินงาน">
+                        <input type="text" name="c_name" value="<?= $row['c_name'];?>" class="form-control" placeholder="กรอกข้อมูลการดำเนินงาน">
                       </div>
                       <div class="form-group">
                         <label>สรุปข้อปฏิบัติ</label>
-                        <textarea type="text" name="c_work" class="form-control" placeholder="กรอกข้อมูลสรุปข้อปฏิบัติ"></textarea>
+                        <textarea type="text" value="<?= $row['c_work'];?>" name="c_work" class="form-control" placeholder="กรอกข้อมูลสรุปข้อปฏิบัติ"></textarea>
                       </div>
                       <div class="form-group">
                         <label>กำหนดส่งเอกสาร</label>
-                        <input type="date" name="c_date" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
+                        <input type="date" name="c_start" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
+                    </div>
+                      <div class="form-group">
+                        <label>กำหนดส่งเอกสาร</label>
+                        <input type="date"  name="c_complete" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                     </div>
-                    
                   </div>
                   <div class="row" align="left">
                     <div class="col-sm-6">

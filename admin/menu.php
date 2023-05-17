@@ -71,11 +71,16 @@ session_start();
             </a>
           </li>
           <li class="nav-item">
-            <a href="calendar.php" class="nav-link <?php if($menu=="type"){echo "active";} ?> ">
+            <a href="calendar.php" class="nav-link <?php if($menu=="calendar"){echo "active";} ?> ">
               <i class="nav-icon fas fa-edit"></i>
               <p>จัดการปฎิทินการศึกษา</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="doc_student.php" class="nav-link <?php if($menu=="doc_men"){echo "active";} ?> ">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>เอกสารโครงงานฯ</p>
+            </a>
           <li class="nav-header">ออกจากระบบ</li>
           <li class="nav-item">
             <a href="../logout.php" class="nav-link"  onclick="return confirm('ยืนยันออกจากระบบ !!');">

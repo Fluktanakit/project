@@ -4,22 +4,25 @@
           //ไฟล์เชื่อมต่อฐานข้อมูล
           include 'condb.php';
       //ประกาศตัวแปรรับค่าจากฟอร์ม
-      $c_id = $_POST['c_id'];
-      $c_name = $_POST['c_name'];
-      $c_date = $_POST['c_date'];
-      $c_work = $_POST['c_work'];
+        $c_id = $_POST['c_id'];
+        $c_name = $_POST['c_name'];
+        $c_start = $_POST['c_start'];
+        $c_complete = $_POST['c_complete'];
+        $c_work = $_POST['c_work'];
       //sql update
-      $stmt = $conn->prepare("UPDATE tbl_calendar SET 
-      c_id=:c_id,
-      c_name=:c_name,
-      c_date=:c_date,
-      c_work=:c_work
-      WHERE c_id=:c_id");
-$stmt->bindParam(':c_id', $c_id, PDO::PARAM_INT);
-$stmt->bindParam(':c_name', $c_name, PDO::PARAM_STR);
-$stmt->bindParam(':c_date', $c_date, PDO::PARAM_STR); //change to PARAM_STR since you are using a string formatted date
-$stmt->bindParam(':c_work', $c_work, PDO::PARAM_STR);
-$stmt->execute();
+        $stmt = $conn->prepare("UPDATE tbl_calendar SET 
+        c_id=:c_id,
+        c_name=:c_name,
+        c_start=:c_start,
+        c_complete=:c_complete,
+        c_work=:c_work
+        WHERE c_id=:c_id");
+        $stmt->bindParam(':c_id', $c_id, PDO::PARAM_STR);
+        $stmt->bindParam(':c_name', $c_name, PDO::PARAM_STR);
+        $stmt->bindParam(':c_complete', $c_complete, PDO::PARAM_STR);
+        $stmt->bindParam(':c_start', $c_start, PDO::PARAM_STR);
+        $stmt->bindParam(':c_work', $c_work, PDO::PARAM_STR);
+        $stmt->execute();
 
     // sweet alert 
     echo '
