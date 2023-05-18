@@ -31,8 +31,8 @@
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">ขั้นตอนที่</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">การดำเนินงาน</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 40%;">สรุปข้อปฏิบัติ</th>
-        <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">วันที่กำหนดส่ง</th>
-        <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ถึงกำหนดส่งใน</th>
+        <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">วันที่กำหนดส่ง</th>
+        <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">ถึงกำหนดส่งใน</th>
 
       </tr>
     </thead>

@@ -2,9 +2,8 @@
 //คิวรี่ข้อมูลมาแสดงในตาราง โดยเทียบข้อมูลระหว่างตารางตำแหน่งงานกับตารางพนักงานที่มีคอลัมภ์สัมพันธ์กัน ก็คือ p_id กับ ref_p_id
     include 'condb.php';
     $stmtMem = $conn->prepare("
-    SELECT m.*, d.d_name #ตารางพนักงานเอามาทุกคอลัมภ์ , ตารางแผนกเอามาแค่ชื่อแผนก
+    SELECT m.*
     FROM tbl_member AS m  #AS e คือการแทนชื่อตารางให้ชื่อสั้นลงในตอนที่เอาไป inner join โค้ดจะดูไม่รก
-    INNER JOIN tbl_department AS d ON m.d_id=d.d_id
     ORDER BY m.m_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
     ");
       $stmtMem->execute();
@@ -18,7 +17,6 @@
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">ไอดี</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">รหัสผ่าน</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ชื่อ</th>
-        <th  tabindex="0" rowspan="1" colspan="1" style="width: 25%;">แผนก</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">สถานะ</th>
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">แก้ไข</th> 
         <th  tabindex="0" rowspan="1" colspan="1" style="width: 5%;">ลบ</th> 
@@ -42,9 +40,7 @@
          <td>
          <?php echo $row_member['m_name']; ?>
         </td>
-         <td>
-         <?php echo $row_member['d_name']; ?>
-        </td>
+         
         <td>
          <?php 
          $st =  $row_member['m_level'];

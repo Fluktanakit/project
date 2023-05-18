@@ -60,21 +60,15 @@
           <ul class="nav nav-treeview" style="display: block;">
 
             <li class="nav-item">
-              <a href="doc.php" class="nav-link <?php if($menu=="doc"){echo "active";} ?> ">
-                <i class="far fa-circle nav-icon"></i>
-                <p>เอกสารรวม</p>
-              </a>
-            </li>
-            <li class="nav-item">
               <a href="doc_department.php" class="nav-link <?php if($menu=="doc_depart"){echo "active";} ?> ">
                 <i class="far fa-circle nav-icon"></i>
-                <p>เอกสารเฉาะแผนก</p>
+                <p>เอกสารดาวน์โหลด</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="doc_member.php" class="nav-link <?php if($menu=="doc_mem"){echo "active";} ?>">
                 <i class="far fa-circle nav-icon"></i>
-                <p>เอกสารเฉาะบุคคล</p>
+                <p>เอกสารโครงงานฯ</p>
               </a>
             </li>
            

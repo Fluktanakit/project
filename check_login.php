@@ -31,7 +31,6 @@
         $_SESSION['m_name'] = $row['m_name'];
         $_SESSION['m_img'] = $row['m_img'];
         $_SESSION['m_level'] = $row['m_level'];
-        $_SESSION['d_id'] = $row['d_id'];
          $_SESSION['m_username'] = $row['m_username'];
         //เช็คว่ามีตัวแปร session อะไรบ้าง
        //  print_r($_SESSION);
@@ -42,8 +41,8 @@
         }elseif ($_SESSION['m_level'] == 'student') { //เช็คสถานะว่าเป็นสมาชิก
          header('Location: student'); //login ถูกต้องและกระโดดไปหน้าตามที่ต้องการ
         }
-        elseif ($_SESSION['m_level'] == 'boss') { //เช็คสถานะว่าเป็นสมาชิก
-         header('Location: boss'); //login ถูกต้องและกระโดดไปหน้าตามที่ต้องการ
+        elseif ($_SESSION['m_level'] == 'teacher') { //เช็คสถานะว่าเป็นสมาชิก
+         header('Location: teacher'); //login ถูกต้องและกระโดดไปหน้าตามที่ต้องการ
         }    
       }else{ //ถ้า m_username or password ไม่ถูกต้อง
          echo '<script>

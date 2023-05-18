@@ -2,9 +2,8 @@
  // print_r($_SESSION);
       include '../condb.php';
       $stmt_m = $conn->prepare("
-        SELECT m.*, d.d_name #ตารางสมาชิกเอามาทุกคอลัมภ์ , ตารางแผนกเอามาแค่ชื่อแผนก
+        SELECT m.*
         FROM tbl_member AS m  #AS m คือการแทนชื่อตารางให้ชื่อสั้นลงในตอนที่เอาไป inner join โค้ดจะดูไม่รก
-        INNER JOIN tbl_department AS d ON m.d_id=d.d_id  
         WHERE m.m_id = $m_id
         ORDER BY m.m_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
         ");
@@ -42,26 +41,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label>แผนกงาน</label>
-            <select name="d_id" class="form-control" required>
-                 <option value="<?= $row_em['d_id'];?>"><?= $row_em['d_name'];?></option>
-              <option disabled>-เลือกแผนกงาน-</option>
-              <?php
-              include '../condb.php';
-              $stmt = $conn->prepare("SELECT* FROM tbl_department");
-              $stmt->execute();
-              $result = $stmt->fetchAll();
-              foreach($result as $row) {
-              ?>
-              <option value="<?= $row['d_id'];?>"><?= $row['d_name'];?></option>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-      </div>
+      
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">

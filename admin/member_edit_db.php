@@ -42,7 +42,6 @@ if (isset($_POST['m_name'])) {
     m_username=:m_username,
     m_password=:m_password,
     m_name=:m_name,
-    d_id=:d_id,
     m_level=:m_level,
     m_img='$newname'
     WHERE m_id =:m_id");
@@ -50,7 +49,6 @@ if (isset($_POST['m_name'])) {
     $stmt->bindParam(':m_username', $m_username, PDO::PARAM_STR);
     $stmt->bindParam(':m_password', $m_password, PDO::PARAM_STR);
     $stmt->bindParam(':m_name', $m_name, PDO::PARAM_STR);
-    $stmt->bindParam(':d_id', $d_id, PDO::PARAM_INT);
     $stmt->bindParam(':m_level', $m_level, PDO::PARAM_STR);
     $result = $stmt->execute();
     //เงื่อนไขตรวจสอบการเพิ่มข้อมูล

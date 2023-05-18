@@ -31,15 +31,15 @@ if (isset($_POST['m_name'])) {
     $m_username = $_POST['m_username'];
     $m_password = $_POST['m_password'];
     $m_name = $_POST['m_name'];
-    $d_id = $_POST['d_id'];
+
     $m_level = $_POST['m_level'];
     //sql insert
-    $stmt = $conn->prepare("INSERT INTO tbl_member (m_username, m_password, m_name, d_id, m_level, m_img)
-    VALUES (:m_username, :m_password, :m_name, :d_id, :m_level, '$newname')");
+    $stmt = $conn->prepare("INSERT INTO tbl_member (m_username, m_password, m_name,  m_level, m_img)
+    VALUES (:m_username, :m_password, :m_name,  :m_level, '$newname')");
     $stmt->bindParam(':m_username', $m_username, PDO::PARAM_STR);
     $stmt->bindParam(':m_password', $m_password, PDO::PARAM_STR);
     $stmt->bindParam(':m_name', $m_name, PDO::PARAM_STR);
-    $stmt->bindParam(':d_id', $d_id, PDO::PARAM_INT);
+   
     $stmt->bindParam(':m_level', $m_level, PDO::PARAM_STR);
     $result = $stmt->execute();
     //เงื่อนไขตรวจสอบการเพิ่มข้อมูล

@@ -11,7 +11,7 @@ echo '
 // print_r($_SESSION);
 
 //สร้างเงื่อนไขตรวจสอบสิทธิ์การเข้าใช้งานจาก session
-if(empty($_SESSION['m_id']) && $_SESSION['m_level'] !='boss' ){
+if(empty($_SESSION['m_id']) && $_SESSION['m_level'] !='teacher' ){
             echo '<script>
                 setTimeout(function() {
                 swal({

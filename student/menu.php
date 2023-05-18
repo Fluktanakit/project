@@ -39,7 +39,7 @@
         <li class="nav-item">
           <a href="index.php" class="nav-link <?php if($menu=="index"){echo "active";} ?> ">
             <i class="nav-icon fas fa-tachometer-alt"></i>
-            <p>Dashboard</p>
+            <p>ปฎิทินการศึกษา</p>
           </a>
         </li>
         <li class="nav-item">

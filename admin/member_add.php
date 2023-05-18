@@ -40,25 +40,6 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
-            <label>ปีการศึกษา</label>
-            <select name="d_id" class="form-control" required>
-              <option value="">-ปีการศึกษา-</option>
-              <?php
-              include 'condb.php';
-              $stmt = $conn->prepare("SELECT* FROM tbl_department");
-              $stmt->execute();
-              $result = $stmt->fetchAll();
-              foreach($result as $row) {
-              ?>
-              <option value="<?= $row['d_id'];?>"><?= $row['d_name'];?></option>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
             <label>*รูปภาพ .jpg .png*</label>
             <input type="file" name="m_img" class="form-control">
           </div>
