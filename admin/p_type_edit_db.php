@@ -1,15 +1,15 @@
 <?php
        //ถ้ามีค่าส่งมาจากฟอร์ม
-      if(isset($_POST['d_name'])) {
+      if(isset($_POST['cha_name'])) {
           //ไฟล์เชื่อมต่อฐานข้อมูล
           include 'condb.php';
       //ประกาศตัวแปรรับค่าจากฟอร์ม
-      $d_id = $_POST['d_id'];
-      $d_name = $_POST['d_name'];
+      $cha_id = $_POST['cha_id'];
+      $cha_name = $_POST['cha_name'];
       //sql update
-      $stmt = $conn->prepare("UPDATE  tbl_department SET d_name=:d_name WHERE d_id=:d_id");
-      $stmt->bindParam(':d_id', $d_id , PDO::PARAM_INT);
-      $stmt->bindParam(':d_name', $d_name , PDO::PARAM_STR);
+      $stmt = $conn->prepare("UPDATE  tbl_chapter SET cha_name=:cha_name WHERE cha_id=:cha_id");
+      $stmt->bindParam(':cha_id', $cha_id , PDO::PARAM_INT);
+      $stmt->bindParam(':cha_name', $cha_name , PDO::PARAM_STR);
       $stmt->execute();
     // sweet alert 
     echo '
@@ -21,13 +21,13 @@
         echo '<script>
              setTimeout(function() {
               swal({
-                    title: "แก้ไขข้อมูลแผนกสำเร็จ",
-                    text: "Redirecting in 1 seconds.",
-                    type: "success",
-                    timer: 1000,
-                    showConfirmButton: false
+                  title: "แก้ไขข้อมูลสำเร็จ",
+                  text: "Redirecting in 1 seconds.",
+                  type: "success",
+                  timer: 1000,
+                  showConfirmButton: false
               }, function() {
-                  window.location = "department.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "p_type.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';
@@ -38,7 +38,7 @@
                   title: "เกิดข้อผิดพลาด",
                   type: "error"
               }, function() {
-                  window.location = "department.php"; //หน้าที่ต้องการให้กระโดดไป
+                  window.location = "p_type.php"; //หน้าที่ต้องการให้กระโดดไป
               });
             }, 1000);
         </script>';

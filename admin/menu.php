@@ -47,12 +47,6 @@ session_start();
             </a>
           </li>
           <li class="nav-item">
-            <a href="department.php" class="nav-link <?php if($menu=="department"){echo "active";} ?> ">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>จัดสถานะการศึกษา</p>
-            </a>
-          </li>
-          <li class="nav-item">
             <a href="member.php" class="nav-link <?php if($menu=="member"){echo "active";} ?> ">
               <i class="nav-icon fas fa-edit"></i>
               <p>จัดการสมาชิก</p>
@@ -61,13 +55,19 @@ session_start();
           <li class="nav-item">
             <a href="type.php" class="nav-link <?php if($menu=="type"){echo "active";} ?> ">
               <i class="nav-icon fas fa-edit"></i>
-              <p>จัดการประเภท</p>
+              <p>จัดการประเภทเอกสาร</p>
             </a>
           </li>
           <li class="nav-item">
+            <a href="p_type.php" class="nav-link <?php if($menu=="p_type"){echo "active";} ?> ">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>จัดการประเภทเอกสารโครงงานฯ</p>
+            </a>
+            </li>
+          <li class="nav-item">
             <a href="doc.php" class="nav-link <?php if($menu=="doc"){echo "active";} ?> ">
               <i class="nav-icon fas fa-edit"></i>
-              <p>จัดการเอกสาร</p>
+              <p>จัดการเอกสารดาว์นโหลด</p>
             </a>
           </li>
           <li class="nav-item">
@@ -81,6 +81,8 @@ session_start();
               <i class="nav-icon fas fa-edit"></i>
               <p>เอกสารโครงงานฯ</p>
             </a>
+            </li>
+           
           <li class="nav-header">ออกจากระบบ</li>
           <li class="nav-item">
             <a href="../logout.php" class="nav-link"  onclick="return confirm('ยืนยันออกจากระบบ !!');">

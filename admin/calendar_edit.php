@@ -13,7 +13,7 @@
       ?>
        <div class="card card-info">
               <div class="card-header">
-                <h3 class="card-title">แก้ไขข้อมูลปฏิทอนการศึกษา</h3>
+                <h3 class="card-title">แก้ไขข้อมูลปฏิทินการศึกษา</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -34,11 +34,11 @@
                         <textarea type="text" value="<?= $row['c_work'];?>" name="c_work" class="form-control" placeholder="กรอกข้อมูลสรุปข้อปฏิบัติ"></textarea>
                       </div>
                       <div class="form-group">
-                        <label>กำหนดส่งเอกสาร</label>
+                        <label>กำหนดวันเริ่มส่งเอกสาร</label>
                         <input type="date" name="c_start" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                       <div class="form-group">
-                        <label>กำหนดส่งเอกสาร</label>
+                        <label>กำหนดวันสุดท้ายที่ส่งเอกสาร</label>
                         <input type="date"  name="c_complete" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                     </div>

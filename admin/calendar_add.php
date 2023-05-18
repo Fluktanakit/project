@@ -21,11 +21,11 @@
                         <textarea type="text" name="c_work" class="form-control" placeholder="กรอกข้อมูลสรุปข้อปฏิบัติ"></textarea>
                       </div>
                       <div class="form-group">
-                        <label>กำหนดส่งเอกสาร</label>
+                        <label>กำหนดวันเริ่มส่งเอกสาร</label>
                         <input type="date" name="c_start" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                       <div class="form-group">
-                        <label>กำหนดส่งเอกสาร</label>
+                        <label>วันสุดท้ายในการส่งเอกสาร</label>
                         <input type="date" name="c_complete" class="form-control" placeholder="กรอกข้อมูลกำหนดส่งเอกสาร">
                     </div>
                     </div>

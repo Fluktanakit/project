@@ -34,15 +34,14 @@ if (isset($_POST['filename'])) {
     $filename = $_POST['filename'];
     $t_id = $_POST['t_id'];
     $m_username = $_POST['m_username'];
-    $d_id = $_POST['d_id'];
+ 
     //sql insert
-    $stmt = $conn->prepare("INSERT INTO tbl_doc_file (fileID, filename, t_id, doc_file, m_username, d_id)
-    VALUES (:fileID, :filename, :t_id, '$newname',  :m_username, :d_id)");
+    $stmt = $conn->prepare("INSERT INTO tbl_doc_file (fileID, filename, t_id, doc_file, m_username)
+    VALUES (:fileID, :filename, :t_id, '$newname',  :m_username)");
     $stmt->bindParam(':fileID', $fileID, PDO::PARAM_STR);
     $stmt->bindParam(':filename', $filename, PDO::PARAM_STR);
     $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
     $stmt->bindParam(':m_username', $m_username, PDO::PARAM_STR);
-    $stmt->bindParam(':d_id', $d_id, PDO::PARAM_INT);
     $result = $stmt->execute();
     //เงื่อนไขตรวจสอบการเพิ่มข้อมูล
             if($result){

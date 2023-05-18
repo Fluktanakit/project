@@ -58,17 +58,17 @@
       <div class="row">
         <div class="col-sm-6">
           <div class="form-group">
-            <label>ส่งให้ชั้นปี</label>
-            <select name="d_id" class="custom-select rounded-0" required>
-              <option value="">-เลือกชั้นปี-</option>
+            <label>จัดทำโดย</label>
+            <select name="t_id" class="custom-select rounded-0" required>
+              <option value="">-เลือกผู้จัดทำ-</option>
               <?php
               include 'condb.php';
-              $stmt = $conn->prepare("SELECT* FROM tbl_department");
+              $stmt = $conn->prepare("SELECT* FROM tbl_type");
               $stmt->execute();
-              $result = $stmt->fetchAll();
-              foreach($result as $row) {
+              $result_t = $stmt->fetchAll();
+              foreach($result_t as $row_t) {
               ?>
-              <option value="<?= $row['d_id'];?>"><?= $row['d_name'];?></option>
+              <option value="<?= $row_t['t_id'];?>"><?= $row_t['t_name'];?></option>
               <?php } ?>
             </select>
           </div>

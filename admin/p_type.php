@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php $menu = "department";?>
+<?php $menu = "p_type";?>
 <?php include("head.php"); ?> 
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -26,19 +26,18 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         
-         <a href="department.php?act=add" class="btn btn-app bg-success">
+         <a href="p_type.php?act=add" class="btn btn-app bg-success">
             <i class="fas fa-users"></i> เพิ่มข้อมูล</a> 
           <!-- ./col -->
            <div class="col-md-10">
             <?php 
             $act = (isset($_GET['act']) ? $_GET['act'] : '');
             if ($act == 'add') {
-            include('department_add.php');
-            }elseif ($act == 'edit') {
-            include('department_edit.php');
-            }
-            else{
-            include('department_list.php'); 
+            include('p_type_add.php');
+            }elseif ($act =='edit') {
+            include('p_type_edit.php');
+            }else{
+            include('p_type_list.php'); 
             }
             ?>
           </div>
