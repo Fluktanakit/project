@@ -37,27 +37,20 @@ if (isset($_POST['filename'])) {
     $fileID = $_POST['fileID'];
     $filename = $_POST['filename'];
     $t_id = $_POST['t_id'];
-    $date_get = $_POST['date_get'];
-    $m_username = $_POST['m_username'];
-    $d_id = $_POST['d_id'];
     $doc_file2 = $_POST['doc_file2'];
     //sql insert
     $stmt = $conn->prepare("UPDATE tbl_doc_file SET 
     fileID=:fileID,    
     filename=:filename,
     t_id=:t_id,
-    date_get=:date_get,
-    m_username=:m_username,
-    d_id=:d_id,
     doc_file='$newname'
     WHERE f_id =:f_id");
     $stmt->bindParam(':f_id', $f_id, PDO::PARAM_INT);
     $stmt->bindParam(':fileID', $fileID, PDO::PARAM_STR);
     $stmt->bindParam(':filename', $filename, PDO::PARAM_STR);
     $stmt->bindParam(':t_id', $t_id, PDO::PARAM_INT);
-    $stmt->bindParam(':date_get', $date_get, PDO::PARAM_STR);
-    $stmt->bindParam(':m_username', $m_username, PDO::PARAM_STR);
-    $stmt->bindParam(':d_id', $d_id, PDO::PARAM_INT);
+
+
     $result = $stmt->execute();
     //เงื่อนไขตรวจสอบการเพิ่มข้อมูล
             if($result){

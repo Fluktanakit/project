@@ -5,7 +5,6 @@
       SELECT * #ตารางเอามาทุกคอลัมภ์
       FROM tbl_doc_file AS f
       INNER JOIN tbl_type AS t ON f.t_id=t.t_id
-      INNER JOIN tbl_department AS d ON f.d_id=d.d_id
       WHERE f.f_id=?
       ORDER BY f.f_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
       ");
@@ -69,42 +68,8 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label>วันที่พิมพ์</label>
-            <input type="date" name="date_get" value="<?= $row_doc['date_get'];?>" class="form-control" placeholder="กรอกข้อมูลชื่อเอกสาร">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label>ส่งให้ผู้ใช้ ID</label>
-            <input type="text" name="m_username" value="<?= $row_doc['m_username'];?>" class="form-control is-warning" placeholder="กรอกข้อมูล ID ผู้ใช้">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label>ส่งให้แผนกงาน</label>
-            <select name="d_id" class="custom-select rounded-0" required>
-              <option value="<?= $row_doc['d_id'];?>"><?= $row_doc['d_name'];?></option>
-              <option disabled>-เลือกแผนกงาน-</option>
-              <?php
-              include 'condb.php';
-              $stmt = $conn->prepare("SELECT* FROM tbl_department");
-              $stmt->execute();
-              $result = $stmt->fetchAll();
-              foreach($result as $row) {
-              ?>
-              <option value="<?= $row['d_id'];?>"><?= $row['d_name'];?></option>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-      </div>
+      
+      
       <div class="row" align="left">
         <div class="col-sm-6">
           <input type="hidden" name="doc_file2" value="<?php echo $row_doc['doc_file'];?>">

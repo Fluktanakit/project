@@ -47,33 +47,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label>จัดทำโดย</label>
-            <input type="text" name="m_username" class="form-control is-warning" placeholder="กรอกข้อมูล ID ผู้ใช้">
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="form-group">
-            <label>จัดทำโดย</label>
-            <select name="t_id" class="custom-select rounded-0" required>
-              <option value="">-เลือกผู้จัดทำ-</option>
-              <?php
-              include 'condb.php';
-              $stmt = $conn->prepare("SELECT* FROM tbl_type");
-              $stmt->execute();
-              $result_t = $stmt->fetchAll();
-              foreach($result_t as $row_t) {
-              ?>
-              <option value="<?= $row_t['t_id'];?>"><?= $row_t['t_name'];?></option>
-              <?php } ?>
-            </select>
-          </div>
-        </div>
-      </div>
+     
       <div class="row" align="left">
         <div class="col-sm-6">
           <button type="submit" class="btn btn-success">บันทึกข้อมูล</button>

@@ -26,8 +26,7 @@
       <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         
-         <a href="doc_student.php?act=add" class="btn btn-app bg-success">
-            <i class="fas fa-users"></i> เพิ่มข้อมูล</a> 
+         
           <!-- ./col -->
            <div class="col-md-12">
             <?php 
@@ -35,7 +34,7 @@
             if ($act == 'add') {
             include('doc_add_student.php');
             }elseif ($act == 'edit') {
-            include('doc_edit_student.php');
+            include('doc_edit_member.php');
             }
             else{
             include('doc_list_member.php'); 

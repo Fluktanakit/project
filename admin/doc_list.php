@@ -15,7 +15,6 @@ $resultDoc = $stmtDoc->fetchAll();
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">รหัสเอกสาร</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ชื่อเอกสาร/ประเภท</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">วันที่อัพโหลด</th>
-      <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ผู้อัปโหลด</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 17%;">จัดการส่วนข้อมูล</th>
     </tr>
   </thead>
@@ -34,9 +33,6 @@ $resultDoc = $stmtDoc->fetchAll();
       <td>
         
         อัพเมื่อวัน: <?php echo date('d/m/Y',strtotime($row_Doc['date_up'])); ?>
-      </td>
-      <td>
-        <?php echo $row_Doc['m_username'];?>
       </td>
       <td>
         <a class="btn btn-info btn-sm" href="doc_open.php?id=<?php echo $row_Doc['fileID']; ?>" target="_blank">

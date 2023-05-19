@@ -12,7 +12,7 @@ $resultDoc = $stmtDoc->fetchAll();
   <thead>
     <tr role="row" class="info">
     
-      <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ชื่อหนังสือ/ประเภท</th>
+      <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">ชื่อเอกสาร/ประเภท</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 15%;">วันที่อัพโหลด</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 20%;">แผนก/ผู้ใช้</th>
       <th  tabindex="0" rowspan="1" colspan="1" style="width: 10%;">จัดการส่วนข้อมูล</th>
@@ -22,6 +22,7 @@ $resultDoc = $stmtDoc->fetchAll();
     <?php foreach ($resultDoc as $row_Doc) { ?>
     <tr>
       <td>
+      ชื่อเอกสาร <?php echo $row_Doc['doc_name']; ?><br>
         <?php echo $row_Doc['doc_file']; ?>
         <br>
         ประเภท: <font color="blue"><?php echo $row_Doc['cha_name']; ?></font><br>

@@ -1,11 +1,12 @@
 
-        <?php
-       include '../condb.php';
-       $stmtDoc = $conn->prepare("SELECT * #ตารางเอามาทุกคอลัมภ์
-       FROM tbl_pdf as f
-       INNER JOIN tbl_chapter as c ON f.cha_id = c.cha_id
-       ORDER BY c.cha_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
-       ");
+<?php
+        include '../condb.php';
+        $stmtDoc = $conn->prepare(" SELECT * #ตารางเอามาทุกคอลัมภ์
+        FROM tbl_pdf as f
+        INNER JOIN tbl_chapter as c ON f.cha_id = c.cha_id
+        WHERE no=?
+        ORDER BY c.cha_id ASC #เรียงลำดับข้อมูลจากน้อยไปมาก
+        ");
         $stmtDoc->execute();
         $resultDoc = $stmtDoc->fetchAll();
         ?>
@@ -19,7 +20,7 @@
         <div class="col-sm-6">
           <div class="form-group">
             <label>ชื่อเอกสาร</label>
-            <input type="text" name="doc_name" value="<?= $row_Doc['doc_name'];?>"  class="form-control is-warning" placeholder="กรอกข้อมูลชื่อเอกสาร">
+            <input type="text" name="doc_name" value="<?= $row['doc_name'];?>"  class="form-control is-warning" placeholder="กรอกข้อมูลชื่อเอกสาร">
           </div>
         </div>
       </div>
