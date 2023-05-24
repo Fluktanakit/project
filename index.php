@@ -16,13 +16,13 @@
     <!-- Style -->
     <link rel="stylesheet" href="loginform/css/style.css">
 
-    <title>Document PDO V.1</title>
+    <title>ระบบการติดตามการทำโครงงานทางเทคโนโนโลยีสารสนเทศ</title>
   </head>
   <body>
   
 
   <div class="half">
-    <div class="bg order-1 order-md-2" style="background-image: url('loginform/images/bg_1.jpg');"></div>
+    <div class="bg order-1 order-md-2" style="background-image: url('loginform/images/bg_2.jpg');"></div>
     <div class="contents order-2 order-md-1">
 
       <div class="container">
@@ -30,7 +30,7 @@
           <div class="col-md-6">
             <div class="form-block">
               <div class="text-center mb-5">
-              <h3>Document <strong>PDO V.1</strong></h3>
+              <h3>ระบบการติดตามการทำโครงงานทางเทคโนโนโลยีสารสนเทศ</h3>
               <!-- <p class="mb-4">Lorem ipsum dolor sit amet elit. Sapiente sit aut eos consectetur adipisicing.</p> -->
               </div>
               <form action="check_login.php" method="post">
